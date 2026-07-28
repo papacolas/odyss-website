@@ -1,0 +1,213 @@
+/* ==========================================================
+   Synodia / Odyss — feuille de style partagée
+   Palette et typographie dérivées de l'identité déjà établie
+   dans l'app (fond nuit de la Constellation, teal de Theme.accent,
+   accent doré des étoiles "couple").
+   ========================================================== */
+
+:root {
+  /* Nuit */
+  --bg-night: #070a13;
+  --bg-night-soft: #0d1220;
+  --bg-night-card: #11172a;
+
+  /* Papier (pages légales, plus lisibles en clair) */
+  --bg-paper: #f7f5f0;
+  --bg-paper-card: #ffffff;
+
+  /* Encre */
+  --ink: #eef0f4;
+  --ink-muted: #9aa7bd;
+  --ink-dark: #1b2030;
+  --ink-dark-muted: #5b6478;
+
+  /* Accents */
+  --accent-teal: #3b8fa8;
+  --accent-teal-bright: #5cb4cf;
+  --accent-gold: #e3a668;
+
+  --line: rgba(255, 255, 255, 0.10);
+  --line-dark: rgba(27, 32, 48, 0.12);
+
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg-night);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.paper {
+  background: var(--bg-paper);
+  color: var(--ink-dark);
+}
+
+a {
+  color: var(--accent-teal-bright);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+body.paper a { color: var(--accent-teal); }
+
+img { max-width: 100%; display: block; }
+
+/* ── Layout ── */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.wrap-narrow {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Typographie ── */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); font-weight: 500; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); margin-top: 0; }
+h3 { font-size: 1.15rem; }
+
+p { color: var(--ink-muted); }
+body.paper p { color: var(--ink-dark-muted); }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+/* ── Header / nav ── */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+body.paper .wordmark { color: var(--ink-dark); }
+
+.site-nav a {
+  margin-left: 24px;
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
+body.paper .site-nav a { color: var(--ink-dark-muted); }
+
+/* ── Cartes ── */
+.card {
+  background: var(--bg-night-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 20px;
+}
+body.paper .card {
+  background: var(--bg-paper-card);
+  border-color: var(--line-dark);
+  box-shadow: 0 1px 3px rgba(27, 32, 48, 0.04);
+}
+
+.card .eyebrow { margin-bottom: 10px; display: block; }
+
+/* ── Boutons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); text-decoration: none; }
+
+.btn-primary {
+  background: var(--accent-teal);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--accent-teal-bright); }
+
+.btn-ghost {
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+body.paper .btn-ghost { border-color: var(--line-dark); color: var(--ink-dark); }
+
+/* ── Footer ── */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 64px;
+  padding: 32px 0 48px;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+body.paper .site-footer { border-color: var(--line-dark); color: var(--ink-dark-muted); }
+
+.site-footer a { color: inherit; opacity: 0.85; }
+.site-footer a:hover { opacity: 1; }
+
+.footer-links a { margin-right: 18px; }
+
+/* ── Pages légales (document) ── */
+.legal h2 {
+  margin-top: 44px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line-dark);
+}
+.legal h2:first-of-type { border-top: none; margin-top: 24px; }
+.legal p, .legal li { color: var(--ink-dark-muted); font-size: 0.98rem; }
+.legal strong { color: var(--ink-dark); }
+
+.placeholder {
+  background: rgba(227, 166, 104, 0.15);
+  border: 1px dashed var(--accent-gold);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  font-size: 0.9em;
+  color: #8a5a1e;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .card { padding: 24px; }
+  .site-nav a { margin-left: 14px; font-size: 0.85rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
