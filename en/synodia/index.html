@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synodia — Your relationship journal</title>
+<meta name="description" content="Synodia is a space to better understand yourself through what you experience and have experienced. A journal for your relationships, friendships and romantic — kind, judgment-free, no scorekeeping.">
+<link rel="alternate" hreflang="fr" href="https://odyss-app.fr/" />
+<link rel="alternate" hreflang="en" href="https://odyss-app.fr/en/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    margin-top: 8px;
+  }
+  #stars {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    padding: 90px 32px 70px;
+    text-align: center;
+  }
+  .hero-inner h1 {
+    font-size: clamp(2.6rem, 8vw, 4.2rem);
+    margin: 18px 0 16px;
+  }
+  .hero-inner p {
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+  .hero-cta {
+    margin-top: 34px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 20px 0 40px;
+  }
+  .feature-grid .card { margin-bottom: 0; }
+  .feature-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: rgba(59, 143, 168, 0.18);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
+  section { margin: 64px 0; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site-header">
+    <a href="/en/" class="wordmark" style="text-decoration:none;">Odyss</a>
+    <nav class="site-nav">
+      <a href="/en/synodia/privacy.html">Privacy</a>
+      <a href="mailto:contact@odyss-app.fr">Contact</a>
+      <a href="/synodia/" style="opacity:0.6;">FR</a>
+    </nav>
+  </header>
+</div>
+
+<div class="wrap-narrow">
+  <div class="hero card" style="padding:0;">
+    <canvas id="stars"></canvas>
+    <div class="hero-inner">
+      <p class="eyebrow">Odyss presents</p>
+      <h1>Synodia</h1>
+      <p>The moment two paths cross. A journal to better understand
+      yourself through what you experience — and what you've lived
+      through.</p>
+      <div class="hero-cta">
+        <a href="#download" class="btn btn-primary">Download on the App Store</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap-narrow">
+
+  <section>
+    <p class="eyebrow">Where the name comes from</p>
+    <h2>Why "Synodia"?</h2>
+    <p>Synodia comes from the Greek <em>syn</em> ("together") and
+    <em>hodos</em> ("the path"). It's the moment two trajectories meet —
+    an encounter, a shared instant, a path that crosses yours.</p>
+    <p>The word also exists in astronomy: the synodic period is the time
+    between two alignments of celestial bodies, the precise moment two
+    bodies face each other again in the sky. A nod to the app's
+    Constellation view, where every person becomes a star on your own
+    sky map.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Our intention</p>
+    <h2>Not a dating app</h2>
+    <p>Synodia is a space to better understand yourself through what you
+    experience and have experienced — a journal for your relationships,
+    friendships and romantic, designed for reflection rather than
+    performance.</p>
+    <p>The number of relationships you've had doesn't matter. What
+    matters is the quality of each one: what it taught you, how it
+    helped you grow, what it means to you. Synodia never encourages
+    stacking up encounters, comparing, or ranking. Your stories belong
+    to you — tell them at your own pace, in your own words.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">What's inside</p>
+    <div class="feature-grid">
+      <div class="card">
+        <div class="feature-icon">✦</div>
+        <h3>A constellation</h3>
+        <p style="margin:0;">Every person becomes a star on your sky
+        map — its size, light and connections tell your story.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon">◐</div>
+        <h3>Reflections</h3>
+        <p style="margin:0;">What you learned, how you changed, what
+        you're grateful for — at your own pace, no obligation.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon">⤳</div>
+        <h3>A timeline</h3>
+        <p style="margin:0;">Your relationships, their context, the
+        links between them — simply organized, letter by letter.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon">◆</div>
+        <h3>Gentle trends</h3>
+        <p style="margin:0;">Soft statistics to help you understand
+        yourself better, never to compare.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card" style="background: linear-gradient(135deg, rgba(59,143,168,0.16), rgba(227,166,104,0.10));">
+      <p class="eyebrow">Privacy</p>
+      <h2 style="margin-bottom: 10px;">Your data stays yours</h2>
+      <p style="margin:0;">All your data stays only on your device.
+      Synodia collects nothing, sends nothing, and shares nothing.
+      <a href="/en/synodia/privacy.html">Read the privacy policy →</a></p>
+    </div>
+  </section>
+
+  <section id="download" style="text-align:center;">
+    <h2>Start your path</h2>
+    <p>Coming soon on the App Store.</p>
+    <div class="hero-cta">
+      <a href="#" class="btn btn-primary">Download on the App Store</a>
+    </div>
+  </section>
+
+</div>
+
+<div class="wrap">
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="/en/synodia/privacy.html">Privacy policy</a>
+      <a href="/en/synodia/legal-notice.html">Legal notice</a>
+      <a href="mailto:contact@odyss-app.fr">Contact</a>
+    </div>
+    <p style="margin-top: 14px; opacity: 0.7;">© 2026 Odyss — Synodia</p>
+  </footer>
+</div>
+
+<script>
+// Light starfield — same spirit as the app's Constellation view:
+// stable positions, gentle twinkle, no external dependency.
+(function () {
+  var canvas = document.getElementById('stars');
+  var ctx = canvas.getContext('2d');
+  var stars = [];
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize() {
+    var rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = rect.width * devicePixelRatio;
+    canvas.height = rect.height * devicePixelRatio;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+    seedStars(rect.width, rect.height);
+  }
+
+  function seedStars(w, h) {
+    stars = [];
+    var count = Math.floor((w * h) / 4500);
+    for (var i = 0; i < count; i++) {
+      stars.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: 0.6 + Math.random() * 1.6,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.8,
+        gold: Math.random() < 0.12
+      });
+    }
+  }
+
+  function draw(t) {
+    var w = canvas.width / devicePixelRatio;
+    var h = canvas.height / devicePixelRatio;
+    ctx.clearRect(0, 0, w, h);
+
+    var grad = ctx.createLinearGradient(0, 0, 0, h);
+    grad.addColorStop(0, '#0a0f1d');
+    grad.addColorStop(1, '#070a13');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+
+    stars.forEach(function (s) {
+      var twinkle = reduceMotion ? 0.8 : 0.55 + 0.45 * Math.sin(t * 0.001 * s.speed + s.phase);
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = s.gold
+        ? 'rgba(227,166,104,' + (twinkle * 0.9) + ')'
+        : 'rgba(238,240,244,' + (twinkle * 0.85) + ')';
+      ctx.fill();
+    });
+
+    if (!reduceMotion) requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(draw);
+})();
+</script>
+
+</body>
+</html>
