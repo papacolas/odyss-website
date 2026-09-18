@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Odyss</title>
+<meta name="description" content="Une question sur Synodia ou sur Odyss ? Écris-nous.">
+<link rel="alternate" hreflang="fr" href="https://odyss-app.fr/contact.html" />
+<link rel="alternate" hreflang="en" href="https://odyss-app.fr/en/contact.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .contact-form { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+  .contact-form label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.6);
+  }
+  .contact-form textarea { min-height: 140px; resize: vertical; }
+  .contact-form button { align-self: flex-start; }
+  #formStatus { margin-top: 16px; font-size: 0.95rem; }
+  #formStatus.success { color: #2e7d4f; }
+  #formStatus.error { color: #b3413b; }
+  .honeypot { position: absolute; left: -9999px; }
+</style>
+</head>
+<body class="paper">
+
+<div class="wrap">
+<header class="site-header">
+<a href="/" class="wordmark" style="text-decoration:none;">Odyss</a>
+<nav class="site-nav">
+<a href="/synodia/">Synodia</a>
+<a href="/en/contact.html" style="opacity:0.6;">EN</a>
+</nav>
+</header>
+</div>
+
+<div class="wrap-narrow legal" style="padding-bottom: 60px;">
+<p class="eyebrow">Odyss</p>
+<h1 style="font-size: 2.2rem;">Contact</h1>
+<p>Une question sur Synodia, un souci technique, ou autre chose ?
+  Écris-nous ci-dessous, on te répond directement par email.</p>
+
+<form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="33848510-e5bd-49e9-b49e-a5da3a9f428b">
+  <input type="hidden" name="subject" value="Nouveau message depuis odyss-app.fr">
+  <input type="hidden" name="from_name" value="Formulaire de contact Odyss">
+  <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off">
+
+  <div>
+    <label for="name">Nom</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Envoyer</button>
+
+  <p id="formStatus"></p>
+</form>
+
+</div>
+
+<div class="wrap">
+<footer class="site-footer">
+<div class="footer-links">
+<a href="/synodia/">Synodia</a>
+<a href="/synodia/mentions-legales.html">Mentions légales</a>
+</div>
+<p style="margin-top: 14px; opacity: 0.7;">© 2026 Odyss</p>
+</footer>
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.textContent = 'Envoi en cours…';
+    status.className = '';
+
+    var formData = new FormData(form);
+    var payload = Object.fromEntries(formData.entries());
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          status.textContent = 'Message envoyé — merci, on te répond rapidement.';
+          status.className = 'success';
+          form.reset();
+        } else {
+          status.textContent = "Une erreur s'est produite. Réessaie, ou écris directement à contact@odyss-app.fr";
+          status.className = 'error';
+        }
+      })
+      .catch(function () {
+        status.textContent = "Une erreur s'est produite. Réessaie, ou écris directement à contact@odyss-app.fr";
+        status.className = 'error';
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
